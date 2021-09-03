@@ -5,7 +5,7 @@ Just a little OpenVPN server hosted in Docker.
 #### Build image
 ```
 docker build \
-  -t docker-openvpn-server \
+  -t openvpn-server \
   .
 ```
 
@@ -17,7 +17,7 @@ docker run \
   -d \
   -p 1194:1194/udp \
   -v <path/to/openvpn>:/etc/openvpn \
-  docker-openvpn-server
+  openvpn-server
 ```
 
 #### View Logs
