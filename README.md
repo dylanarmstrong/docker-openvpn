@@ -14,7 +14,7 @@ docker build \
 docker run \
   --cap-add=NET_ADMIN \
   --name openvpn \
-  -dit \
+  -d \
   -p 1194:1194/udp \
   -v <path/to/openvpn>:/etc/openvpn \
   docker-openvpn

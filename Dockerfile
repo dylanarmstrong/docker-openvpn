@@ -2,6 +2,8 @@ FROM alpine:latest
 
 LABEL maintainer="Dylan Armstrong <dylan@dylan.is>"
 
+ENTRYPOINT ["/init.sh"]
+
 RUN \
   apk add --update \
     iptables \
@@ -18,5 +20,3 @@ VOLUME ["/etc/openvpn"]
 EXPOSE 1194/udp
 
 COPY root/ /
-
-CMD /init.sh
