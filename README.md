@@ -1,11 +1,11 @@
 ## OpenVPN Docker Server
 
-Just a little OpenVPN server hosted in Docker.
+Just a little OpenVPN server in Docker.
 
 #### Build image
 ```
 docker build \
-  -t dylanarmstrong/openvpn-server \
+  -t openvpn-server \
   .
 ```
 
@@ -17,7 +17,7 @@ docker run \
   -d \
   -p 1194:1194/udp \
   -v <path/to/openvpn>:/etc/openvpn \
-  dylanarmstrong/openvpn-server
+  openvpn-server
 ```
 
 #### View Logs
