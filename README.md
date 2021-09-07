@@ -2,10 +2,20 @@
 
 Just a little OpenVPN server in Docker.
 
+### Using docker-compose
+
+```
+cp docker-compose.example.yml docker-compose.yml
+# Edit volumes to point to /etc/openvpn
+docker-compose up -d
+```
+
+### Manual
+
 #### Build image
 ```
 docker build \
-  -t openvpn-server \
+  -t dylanarms/openvpn-server \
   .
 ```
 
@@ -17,7 +27,7 @@ docker run \
   -d \
   -p 1194:1194/udp \
   -v <path/to/openvpn>:/etc/openvpn \
-  openvpn-server
+  dylanarms/openvpn-server
 ```
 
 #### View Logs

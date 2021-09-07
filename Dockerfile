@@ -6,7 +6,6 @@ ENTRYPOINT ["/init.sh"]
 
 RUN \
   apk add --update \
-    curl \
     iptables \
     openvpn \
   && \
@@ -21,5 +20,3 @@ VOLUME ["/etc/openvpn"]
 EXPOSE 1194/udp
 
 COPY root/ /
-
-HEALTHCHECK CMD curl -f http://localhost:1194/ || exit 1

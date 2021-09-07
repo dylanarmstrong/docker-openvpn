@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  openvpn-server:
+    build: .
+    cap_add:
+      - NET_ADMIN
+    container_name: openvpn-server
+    image: dylanarms/openvpn-server
+    hostname: bunny
+    ports:
+      - 1149:1149/udp
+    restart: unless-stopped
+    volumes:
+      - <path/to/openvpn>:/etc/openvpn
