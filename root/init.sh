@@ -9,4 +9,9 @@ iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
 openvpn \
   --cd /etc/openvpn \
   --config server.conf \
-  --data-ciphers AES-256-CBC
+  --cipher AES-128-CBC \
+  --compress \
+  --data-ciphers AES-128-CBC \
+  --fragment 0 \
+  --mssfix 0 \
+  --tun-mtu 48000
