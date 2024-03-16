@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/usr/bin/env sh
 
 mkdir -p /dev/net
 mknod /dev/net/tun c 10 200
@@ -14,8 +14,4 @@ openvpn \
   --cipher AES-128-GCM \
   --compress lz4-v2 \
   --data-ciphers AES-128-GCM \
-  --fragment 0 \
-  --mssfix 0 \
-  --push "compress lz4-v2" \
-  --tun-mtu 48000 \
-  --txqueuelen 4500
+  --push "compress lz4-v2"

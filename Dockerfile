@@ -1,8 +1,8 @@
-FROM alpine:latest
+FROM alpine:3.19
 
 LABEL maintainer="Dylan Armstrong <dylan@dylan.is>"
 
-ENTRYPOINT ["/init.sh"]
+WORKDIR /app
 
 RUN \
   apk add --update \
@@ -19,4 +19,6 @@ VOLUME ["/etc/openvpn"]
 
 EXPOSE 1194/udp
 
-COPY root/ /
+COPY ./scripts/init.sh ./
+
+ENTRYPOINT ["./init.sh"]
